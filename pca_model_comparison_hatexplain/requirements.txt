@@ -1,0 +1,15 @@
+# Core data and numerical work
+numpy
+pandas
+
+# Modeling and evaluation
+scikit-learn
+torch
+transformers
+
+# Hugging Face dataset loading used by src/data.py
+datasets
+
+# Progress bars and plots
+tqdm
+matplotlib
