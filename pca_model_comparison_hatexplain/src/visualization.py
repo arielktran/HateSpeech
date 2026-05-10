@@ -72,3 +72,26 @@ def plot_2d_pca_scatter(X, y, labels, save_path, sample_size=3000, random_state=
     plt.tight_layout()
     plt.savefig(save_path, dpi=300)
     plt.close()
+
+
+def plot_group_macro_f1(group_metrics_df, save_path):
+    pivot = group_metrics_df.pivot(
+        index="group",
+        columns="model",
+        values="macro_f1"
+    )
+
+    pivot = pivot.sort_index()
+
+    ax = pivot.plot(kind="bar", figsize=(10, 5))
+
+    ax.set_title("Macro F1 by Target Group")
+    ax.set_xlabel("Target Group")
+    ax.set_ylabel("Macro F1")
+    ax.set_ylim(0, 1)
+    ax.legend(title="Model")
+
+    plt.xticks(rotation=35, ha="right")
+    plt.tight_layout()
+    plt.savefig(save_path, dpi=300)
+    plt.close()
