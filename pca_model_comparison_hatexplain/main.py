@@ -12,8 +12,10 @@ from src.visualization import (
     plot_model_comparison,
     plot_confusion,
     plot_2d_pca_scatter,
+    plot_group_macro_f1
 )
 from src.bootstrap import bootstrap_macro_f1_comparison
+from src.group_analysis import add_group_columns, evaluate_group_metrics
 
 def main():
     os.makedirs("outputs", exist_ok=True)
@@ -229,6 +231,34 @@ def main():
     print("\nSaved bootstrap outputs:")
     print("outputs/bootstrap_results.json")
     print("outputs/bootstrap_differences.npy")
+
+    print("\nRunning target-group analysis...")
+
+    test_df_with_groups = add_group_columns(test_df, target_col="majority")
+
+    group_metrics_df = evaluate_group_metrics(
+        test_df=test_df_with_groups,
+        bert_pred=bert_y_pred,
+        pca_pred=test_pred,
+        y_true=y_test,
+        min_group_size=30,
+    )
+
+    group_metrics_df.to_csv("outputs/group_metrics.csv", index=False)
+
+    plot_group_macro_f1(
+    group_metrics_df,
+    save_path="outputs/group_macro_f1_comparison.png"
+)
+
+    print("Saved group visualization to:")
+    print("outputs/group_macro_f1_comparison.png")
+
+    print("\n=== GROUP METRICS ===")
+    print(group_metrics_df)
+
+    print("\nSaved group metrics to:")
+    print("outputs/group_metrics.csv")
 
 
 if __name__ == "__main__":
