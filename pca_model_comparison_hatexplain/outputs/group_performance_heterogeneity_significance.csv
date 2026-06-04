@@ -1,0 +1,9 @@
+model,metric,heterogeneity_statistic,observed_value,permutation_null_mean,permutation_null_ci_lower,permutation_null_ci_upper,p_value,n_permutations,n_groups,groups_included,min_group_size,p_value_fdr_bh,significant_fdr_0_05
+BERT Head,accuracy,range,0.37388282025819264,0.14710651795074375,0.07098597586080613,0.25878079633044865,0.0,1000,10,"African,Islam,Jewish,Gay,Women,Refugee,Arab,Caucasian,Hispanic,Asian",30,0.0,True
+BERT Head,accuracy,weighted_sd,0.08641509607765245,0.03346326724380886,0.018615841688514028,0.051653167316364657,0.0,1000,10,"African,Islam,Jewish,Gay,Women,Refugee,Arab,Caucasian,Hispanic,Asian",30,0.0,True
+BERT Head,macro_f1,range,0.42995098784572455,0.15142076964761764,0.07234913532808673,0.2694915885846052,0.0,1000,10,"African,Islam,Jewish,Gay,Women,Refugee,Arab,Caucasian,Hispanic,Asian",30,0.0,True
+BERT Head,macro_f1,weighted_sd,0.06837292110575348,0.034092187007360934,0.01892094108174764,0.053566216571402314,0.001,1000,10,"African,Islam,Jewish,Gay,Women,Refugee,Arab,Caucasian,Hispanic,Asian",30,0.001,True
+PCA + LogReg,accuracy,range,0.37388282025819264,0.14324372387354117,0.06770322466659758,0.24938616429838326,0.0,1000,10,"African,Islam,Jewish,Gay,Women,Refugee,Arab,Caucasian,Hispanic,Asian",30,0.0,True
+PCA + LogReg,accuracy,weighted_sd,0.07863212333486214,0.0326406714721999,0.01797823750219342,0.04998751265264888,0.0,1000,10,"African,Islam,Jewish,Gay,Women,Refugee,Arab,Caucasian,Hispanic,Asian",30,0.0,True
+PCA + LogReg,macro_f1,range,0.38641282273893207,0.14702894868752292,0.06923486632938444,0.26075191589180746,0.0,1000,10,"African,Islam,Jewish,Gay,Women,Refugee,Arab,Caucasian,Hispanic,Asian",30,0.0,True
+PCA + LogReg,macro_f1,weighted_sd,0.06583808469800834,0.0331989407024878,0.017385237069555377,0.0511385280409388,0.001,1000,10,"African,Islam,Jewish,Gay,Women,Refugee,Arab,Caucasian,Hispanic,Asian",30,0.001,True
