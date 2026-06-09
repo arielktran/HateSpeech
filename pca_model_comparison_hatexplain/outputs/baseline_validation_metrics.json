@@ -1,0 +1,18 @@
+{
+  "bert_hatexplain_baseline": {
+    "train_accuracy": 0.7233309497497237,
+    "train_macro_f1": 0.7178762378299949,
+    "val_accuracy": 0.7301092043681747,
+    "val_macro_f1": 0.7243381200986109,
+    "test_accuracy": 0.7379095163806553,
+    "test_macro_f1": 0.7338711062915072
+  },
+  "logreg_no_pca_baseline": {
+    "train_accuracy": 0.7671455502827796,
+    "train_macro_f1": 0.7623463551472255,
+    "val_accuracy": 0.7103484139365575,
+    "val_macro_f1": 0.702751497188809,
+    "test_accuracy": 0.7207488299531981,
+    "test_macro_f1": 0.7153311534673062
+  }
+}
