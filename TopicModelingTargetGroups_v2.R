@@ -88,17 +88,32 @@ labelTopics(model.stm, 9)
 plot(model.stm, n=5)
 plot(model.stm, n=5, labeltype="frex")
 
-#Get representative documents
-findThoughts(model.stm, texts=out$meta$text, topics=1, n=3)
-#Get representative speech type
-findThoughts(model.stm, texts=out$meta$speech_type, topics=1, n=3)
-#Get representative target type(s)
-findThoughts(model.stm, texts=out$meta$target, topics=3, n=3)
+# for a topic Get representative documents (helpful)
+findThoughts(model.stm, texts=out$meta$text, n=3)
+# for a topic Get representative speech type (somewhat helpful)
+findThoughts(model.stm, texts=out$meta$speech_type, n=3)
+# for a topic Get representative target type(s) (helpful)
+findThoughts(model.stm, texts=out$meta$target, n=5)
+
+findThoughts(model.stm, texts=out$meta$target, topics=1, n=5)
+findThoughts(model.stm, texts=out$meta$target, topics=2, n=5)
+findThoughts(model.stm, texts=out$meta$target, topics=3, n=5)
+findThoughts(model.stm, texts=out$meta$target, topics=4, n=5)
+findThoughts(model.stm, texts=out$meta$target, topics=5, n=5)
+findThoughts(model.stm, texts=out$meta$target, topics=6, n=5)
+findThoughts(model.stm, texts=out$meta$target, topics=7, n=5)
+findThoughts(model.stm, texts=out$meta$target, topics=8, n=5)
+findThoughts(model.stm, texts=out$meta$target, topics=9, n=5)
+findThoughts(model.stm, texts=out$meta$target, topics=10, n=5)
+
 
 #Estimate relationship between type, year, and topics
 model.stm.ee <- estimateEffect(1:10 ~target + speech_type, model.stm, meta = out$meta)
 plot(model.stm.ee, "speech_type")
-plot(model.stm.ee, "target", method="difference", cov.value1="text", cov.value2="speech_type")
+   # the below either dont work or result in increasingly more unreadable plots
+plot(model.stm.ee, "target")
+plot(model.stm.ee, "text")
+plot(model.stm.ee, "speech_type", method="difference", cov.value1="text", cov.value2="target")
 
 
 
